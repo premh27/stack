@@ -22,3 +22,12 @@ def hello():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
+
+ls
+docker build -t web_app .
+docker tag web_app:latest premh27/web_app:1.0 
+docker login
+docker push premh27/web_app:1.0
+docker stack deploy -c docker-compose.yml web_app
+docker node ls
+ip:4000
